@@ -1,4 +1,5 @@
 # deis-ui
+![Screenshot](/screenshot.png?raw=true "Screenshot")
 Full client-side web app that interfaces with deis api. It works but there are many more features needed. Please submit pull requests.
 
 ## Compatibility
