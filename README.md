@@ -16,6 +16,7 @@ This attempts to be compatible with the latest version of the deis API. Not back
 
 ## Install
 This is a little hacky. 
+
 1. Alter line 13 in `/app/scripts/services/deisservice.js` to point towards your deis api endpoint.
 2. `grunt build`
 3. Deploy to deis
