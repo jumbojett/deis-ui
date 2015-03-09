@@ -1,0 +1,25 @@
+<div>
+  <h1>Welcome {{username}}</h1>
+
+  <table class="table">
+    <caption>Current Apps</caption>
+    <thead>
+    <tr>
+      <th>App</th>
+      <th>Owner</th>
+      <th>Created</th>
+      <th>Updated</th>
+      <th>URL</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="app in apps">
+      <td><a ng-href="#/deis/app/{{app.id}}">{{ app.id }}</a></td>
+      <td>{{ app.owner }}</td>
+      <td>{{ app.updated | fromNow }}</td>
+      <td>{{ app.created | fromNow }}</td>
+      <td><a href="https://{{app.url}}" target="_blank">{{ app.url }}</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

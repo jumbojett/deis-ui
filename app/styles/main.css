@@ -1,0 +1,245 @@
+
+.testClass{padding:0;margin:0}
+h1,h2,h3,h4,h5,h6{font-family:"Helvetica Neue Light","HelveticaNeue-Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;font-weight:300}
+h1{display:inline-block;padding:50px 0 45px 0;margin-bottom:21px;font-size:36px}
+h2{margin-top:48px;margin-bottom:24px;font-size:36px}
+h3{font-size:16px;font-weight:300}
+h4{margin:50px 0 50px 0;font-size:28px;font-style:italic;line-height:normal;color:#999}
+a{font-family:helvetica;font-size:16px;font-weight:300;text-decoration:underline;border:0!important}
+p{font-family:helvetica;font-size:16px;line-height:22px}
+img{border:0!important}
+body{zoom: 1;}
+#video{height: 460px;}
+.fork{float:right}
+a.get-deis-link{font-size:28px;font-style:italic;line-height:normal;color:#999!important;text-decoration:none}
+a.get-deis-link:hover{color:#00aeff!important;text-decoration:none}
+.main-fork{position:absolute;right:0;z-index:999}
+.menu{padding-right:0}
+.menu .divider{margin:0;background:#ccc;border-bottom:0}
+.menu a{text-decoration:none}
+.menu a .logo{padding-top:50px;padding-bottom:49px}
+.menu a:hover{background:none!important}
+.nav-border{border-right:solid 1px #ccc}
+.navitem{padding:0}
+.navitem.selected.pink{color:#ff135a;border-right:solid 5px #ff135a}
+.navitem.selected.pink a:hover{color:#ff135a!important}
+.navitem.selected.green{color:#00bd50;border-right:solid 5px #00bd50}
+.navitem.selected.green a:hover{color:#00bd50!important}
+.navitem.selected.blue{color:#00aeff;border-right:solid 5px #00aeff}
+.navitem.selected.blue a:hover{color:#00aeff!important}
+.navitem.overview:hover{color:#00bd50;border-right:solid 5px #00bd50}
+.navitem.overview:hover a{color:#00bd50}
+.navitem.get-deis:hover{color:#00aeff;border-right:solid 5px #00aeff}
+.navitem.get-deis:hover a{color:#00aeff}
+.navitem.get-involved:hover{color:#ff135a;border-right:solid 5px #ff135a}
+.navitem.get-involved:hover a{color:#ff135a}
+.navitem.documentation:hover{color:#00bd50;border-right:solid 5px #00bd50}
+.navitem.documentation:hover a{color:#00bd50}
+.navitem.blog:hover{color:#00aeff;border-right:solid 5px #00aeff}
+.navitem.blog:hover a{color:#00aeff}
+.navitem a{width:227px;padding-top:26px!important;padding-right:0!important;padding-bottom:26px!important;color:#999}
+.navitem a:hover{background:none!important}
+.byline-menu{height:34px;margin-left:15px}
+.byline-menu a{font-size:12px;line-height:16px;color:#ccc;text-decoration:none;border:0}
+.byline-menu a:hover{color:#00aeff;text-decoration:none;border:0}
+.byline-menu span{display:inline-block;float:left;width:36px;height:33px}
+.byline-menu p{font-size:12px;line-height:16px;color:#ccc}
+.home p{line-height:25px;color:#ff135a}
+.home img.cover-image{padding-top:165px;padding-left:100px}
+.overview img{width:165px;margin-top:35px;margin-left:72px}
+.pink a{color:#ff135a}
+.pink a:hover{color:#999}
+.pink h1{color:#ff135a;border-bottom:solid 1px #ff135a}
+.pink h2{color:#ff135a}
+.pink h3{color:#ff135a}
+.green a{color:#00bd50}
+.green a:hover{color:#999}
+.green h1{color:#00bd50;border-bottom:solid 1px #00bd50}
+.green h2{color:#00bd50}
+.green h3{color:#00bd50}
+.blue-background {background-color:#00aeff}
+.blue a{color:#00aeff}
+.blue a:hover{color:#999}
+.blue h1{color:#00aeff;border-bottom:solid 1px #00aeff}
+.blue h2{color:#00aeff}
+.blue h3{color:#00aeff}
+pre,code pre{padding-top:30px;padding-bottom:30px;padding-left:30px;font-size:12px;background-color:#f0f0f0;border:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+.gd-code p{font-size:15px}
+.gd-code a{font-size:15px}
+.spacer{margin-bottom:10px}
+.spacer2{margin-bottom:14px}
+.social-container{height:330px}
+.gi{width:434px;height:285px}
+.author-only{padding-top:16px}
+.blog-social{margin-top:50px}
+.blog-social .blog{width:32px;height:32px}
+.blog-social .time{display:inline-block;padding-top:7px;padding-left:30px;color:#ccc}
+.blog-social .time p{display:inline;padding-top:5px;font-weight:300}
+.blog-social .blog-tags{padding-left:86px}
+.blog-social .blog-tags a{color:#00aeff;text-decoration:none}
+.blog-social .blog-tags a:hover{color:#999}
+.blog a h1:hover{color:#999;border-bottom:solid 1px #999}
+.blog-nav a{display:inline-block;padding:23px 23px 23px 23px;margin:100px 5px 14px 0;color:#fff;text-decoration:none;background-color:#00aeff}
+.blog-nav a:hover{background-color:#999}
+.bio{margin-top:80px}
+.bio .bio-pic{float:left}
+.bio .bio-info{float:left;width:230px;height:98px;padding-right:30px;margin-left:20px;border-right:solid 2px #ccc}
+.bio .bio-info p{margin-bottom:0;font-size:12px;line-height:18px}
+.bio .bio-info a{font-size:12px;color:#00aeff;text-decoration:none}
+.bio .bio-info .bio-name{font-weight:600}
+.bio .bio-info .bio-twitter{margin-bottom:0}
+.bio .bio-links{float:left;margin-left:30px}
+.bio .bio-links a{display:block;font-size:12px;color:#00aeff;text-decoration:none}
+.bio .bio-links .inline{display:inline}
+.content{padding-bottom:50px}
+.doc-content{padding-bottom:50px}
+.doc-content h1{height:40px!important;color:#00bd50;border-bottom:solid 1px #00bd50}
+.doc-content h2{color:#00bd50}
+.doc-content h3{color:#00bd50}
+.doc-content a,.doc-content a em,.doc-content em{font-style:normal!imporant;color:#00bd50!important}
+.doc-content a:hover,.doc-content a em:hover,.doc-content em:hover{color:#999!important}
+.doc-content pre,.doc-content code pre{color:#000!important;background-color:#f5f5f5!important}
+.doc-content .admonition{padding:10px;margin-bottom:10px;border:solid 4px #00bd50}
+.doc-content .admonition .admonition-title{font-size:18px;font-weight:bold;line-height:26px;text-indent:50px}
+.docs-sidebar{position:absolute;right:0;width:195px!important;min-height:600px;padding-bottom:50px;margin-left:105px!important}
+.docs-sidebar .docs-border{margin:145px 0 30px 0;border-top:1px solid #999}
+.docs-sidebar .toctree-l1 ul{display:none}
+.docs-sidebar ul,.docs-sidebar li{margin:0;list-style:none}
+.docs-sidebar li.toctree-l1{margin-bottom:20px}
+.docs-sidebar li.toctree-l1 a{color:#00bd50;text-decoration:none}
+.docs-sidebar li.toctree-l2{margin-top:10px}
+.docs-sidebar li.toctree-l2 a{font-size:16px;color:#999;text-decoration:none}
+.searchbox{width:134px!important;height:54px!important;padding-left:50px!important;font-family:helvetica!important;font-size:16px!important;font-weight:300!important;color:white!important;background:url(../img/mag_glass.png) no-repeat 15px 21px #ccc!important;border:0!important;border-left:5px solid #00bd50!important;border-radius:0!important;border-shadow:none!important}
+#notfound{display:block;width:175px!important;margin-top:178px!important}em{font-style:normal!important}
+.mc_merge_var,.mc_signup_submit{float:left}
+#mc_mv_EMAIL{width:211px!important;height:30px!important;margin-bottom:0;font-family:helvetica!important;font-size:12px!important;font-weight:400!important;color:#333!important;border:1px solid #ff135a}
+.mc_merge_var input{font-family:helvetica!important;font-size:12px!important;font-weight:400!important;color:#333!important}
+textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input{-webkit-box-shadow:none!important;-moz-box-shadow:none!important;box-shadow:none!important;-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;transition:none!important}
+.mc_signup_submit{margin-top:5px;margin-left:10px}
+#mc_signup_submit{width:49px!important;padding:6px 14px 4px 14px;margin-top:2px!important;font-family:helvetica;font-size:12px;color:#fff;background:#ff135a;border:0}
+.mailchimp form{margin-bottom:0}
+.mailchimp p{margin:0}
+#mc_message strong{font-family:helvetica;font-size:12px;font-weight:400!important;color:#333!important}
+.mc_error_msg{font-family:helvetica;font-size:12px;font-weight:400!important;color:#333!important}
+.mc_error_msg a{font-size:12px;color:#ff135a}
+.highlight-link{display:none}
+.rtd-docs br{display:none!important}@media(max-width:767px){.main-fork{left:1000px!important}}@media(max-width:480px){.main-fork{left:1000px!important}}
+/* Large desktop */
+@media (min-width: 1200px) {}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .main-fork {
+    left:1067px !important;
+  }
+
+  .cover-image {
+    width:491px !important;
+    padding-left:0 !important;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .main-fork {
+    left:1067px !important;
+  }
+
+  .cover-image {
+    width:491px !important;
+    padding-left:0 !important;
+  }
+}
+
+.blog { font-size: 16px }
+
+.terminal {
+  font-family: CentSchbook Mono BT, Bitstream Vera Sans Mono, monofont, monospace;
+  height: 250px;
+  overflow: scroll;
+  color: #bbbbbb;
+  background: #000;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #ECE9E9;
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 -30px 40px rgba(255, 255, 255, 1);
+}
+body {
+  padding-bottom: 80px;
+}
+
+/*
+Angular animation
+*/
+section[ng-view].ng-enter {
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.form-signin.reject {
+  -webkit-animation: shake 1s;
+  animation: shake 1s;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+/**
+Styling the sliders
+**/
+.slider-selection {
+  background: #ECE9E9;
+}
+

@@ -1,0 +1,88 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="pull-right ">
+      <button class="btn btn-primary btn-ion">
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Logs
+      </button>
+      <button class="btn btn-primary">
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings
+      </button>
+    </div>
+  </div>
+</div>
+<h4 class="text-muted">{{info.id | capFirst}}</h4>
+<div class="row">
+  <div class="col-md-3">
+    <p class="lead">App Info</p>
+    <small class="text-muted">This section gives general details about your the app.</small>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <dl class="dl-horizontal">
+          <dt>Owner</dt>
+          <dd>{{info.owner}}</dd>
+          <dt>Created</dt>
+          <dd>{{info.created | fromNow}}</dd>
+          <dt>Updated</dt>
+          <dd>{{info.updated | fromNow}}</dd>
+          <dt>URL</dt>
+          <dd>{{info.url}}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+<hr/>
+
+<div class="row">
+  <div class="col-md-3">
+    <p class="lead">Scale</p>
+    <small class="text-muted">Help your app grow.</small>
+  </div>
+  <div class="col-md-9">
+    <slider ng-model="containers" min="0" step="1" max="5"></slider>
+    <div>Utilizing {{containers}} containers.</div>
+  </div>
+</div>
+<hr/>
+
+<div class="row">
+  <div class="col-md-3">
+    <p class="lead">Configuration</p>
+    <small class="text-muted">All of your apps environment variables. Yay!</small>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <dl class="dl-horizontal">
+          <dt ng-repeat-start="(env, value) in config.values">{{env}}</dt>
+          <dd ng-repeat-end>{{value}}</dd>
+        </dl>
+      </div>
+    </div>
+    <button type="button" class="btn btn-default">
+      <span class="glyphicon" aria-hidden="true"></span> Add a setting
+    </button>
+  </div>
+</div>
+<hr/>
+
+<div class="row">
+  <div class="col-md-3">
+    <p class="lead">Delete</p>
+    <small class="text-muted">Hate your app? Then click away my friend.</small>
+  </div>
+  <div class="col-md-9">
+    <button type="button" class="btn btn-danger btn-ion">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Delete App
+    </button>
+  </div>
+</div>
+<hr/>
+
+<h2>Logs</h2>
+<div class="panel terminal" scroll-glue="true">
+  <span ng-bind-html="logs | fakeTerminal"></span>
+</div>

@@ -1,0 +1,14 @@
+<div>
+
+  <form class="form-signin" ng-class="{'reject' : failed}" role="form">
+    <h2 class="form-signin-heading text-center"><img class="logo" src="/images/menu-logo.png" alt="Please Sign In"></h2>
+    <label for="inputEmail" class="sr-only">User Name</label>
+    <input type="text" ng-model="username" id="inputEmail" class="form-control" placeholder="Username" required
+           autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input ng-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+    <button class="btn btn-lg btn-primary btn-block btn-ion" ng-click="submit()">Sign in</button>
+  </form>
+
+</div> <!-- /container -->
