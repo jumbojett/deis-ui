@@ -16,6 +16,16 @@ This attempts to be compatible with the latest version of the deis API. Not back
 - Manage users
 
 ## Install
+
+You should be able to:
+
+    deis create deis-ui
+    git push deis master
+
+If `DEIS_CONTROLLER_FQDN` is defined as an environment variable, it will use that when proxying API requests to the controller through the local deis-router which is assumed to be at `172.17.42.1:80`
+
+It will infer your domain name by querying etcd at `http://172.17.42.1:4001`, which can be overridden by specifying an `ETCD_PEER` environment variable.
+
 This is a little hacky. 
 
 1. Alter line 13 in `/app/scripts/services/deisservice.js` to point towards your deis api endpoint.

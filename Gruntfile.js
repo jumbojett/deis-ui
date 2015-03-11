@@ -21,7 +21,23 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
-  // Define the configuration for all the tasks
+  grunt.loadNpmTasks('grunt-connect-proxy');
+
+  var liveReload = parseInt(process.env.LIVERELOAD) || 8443;
+
+  var deisControllerFqdn;
+  if(process.env.DEIS_CONTROLLER_FQDN) {
+    // Allow for manual override of the deisControllerFqdn
+    deisControllerFqdn = process.env.DEIS_CONTROLLER_FQDN;
+  } else {
+    // Automatic service discovery via etcd
+    var request = require('sync-request');
+    var response = request('GET', (process.env.ETCD_PEER || 'http://172.17.42.1:4001') + '/v2/keys/deis/platform/domain');
+    var body = JSON.parse(response.getBody().toString());
+    deisControllerFqdn = 'deis.'+body.node.value;
+  }
+
+// Define the configuration for all the tasks
   grunt.initConfig({
 
     // Project settings
@@ -66,23 +82,67 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: parseInt(process.env.PORT) || 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
-        livereload: 35729
+        hostname: process.env.BIND || '0.0.0.0',
+        livereload: liveReload
       },
+      proxies: [
+        {
+          context: '/v1',
+          host: process.env.DEIS_ROUTER_HOST || '172.17.42.1',
+          port: process.env.DEIS_ROUTER_PORT || 80,
+          https: false,
+          changeOrigin: false,
+          xforward: true,
+          ws: false,
+          headers: {
+            Host: deisControllerFqdn,
+            Origin: deisControllerFqdn,
+            'X-Forwarded-Proto': 'https'
+          }
+        },
+        {
+          context: '/',
+          host: 'localhost',
+          port: liveReload,
+          https: false,
+          changeOrigin: false,
+          xforward: true,
+          ws: true,
+          rejectUnauthorized: false
+        }
+      ],
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect.static(appConfig.app)
-            ];
+          middleware: function (connect, options) {
+            if (!Array.isArray(options.base)) {
+              options.base = [options.base];
+            }
+
+            var middlewares = [];
+
+            // Serve static files.
+            options.base.forEach(function(base) {
+                middlewares.push(connect.static(base));
+            });
+
+            middlewares.push(  connect.static('.tmp') );
+            middlewares.push(  connect().use(
+                 '/bower_components',
+                 connect.static('./bower_components')
+               )
+            );
+            middlewares.push( connect.static(appConfig.app) );
+
+            // Proxy anything not statically served along to Deis controller and LiveProxy
+            middlewares.push( require('grunt-connect-proxy/lib/utils').proxyRequest );
+
+            // Log this request so that it is visibile if you run with --verbose
+            middlewares.push( connect.logger({ immediate: true, format: 'dev' }) );
+
+            return middlewares;
           }
         }
       },
@@ -365,6 +425,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
+      'configureProxies:server',
       'connect:livereload',
       'watch'
     ]);
