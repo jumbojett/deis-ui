@@ -10,7 +10,7 @@
 angular.module('deisApp')
   .service('Deisservice', ['$http', 'AUTH_EVENTS', '$rootScope', 'Session', function ($http, AUTH_EVENTS, $rootScope, Session) {
 
-    var controller = "http://deis.local3.deisapp.com";
+    var controller = "";
 
     this.login = function (username, password) {
 
