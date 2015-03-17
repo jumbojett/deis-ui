@@ -8,7 +8,7 @@ This attempts to be compatible with the latest version of the deis API. Not back
 ## Features
 - Full login and logout with session support
 - Browse and view running apps
-- Display all environmental variables 
+- Display all environmental variables
 - Logs are properly rendered with terminal colors
 
 ## TODO
@@ -16,9 +16,17 @@ This attempts to be compatible with the latest version of the deis API. Not back
 - Manage users
 
 ## Install
-This is a little hacky. 
 
-1. Alter line 13 in `/app/scripts/services/deisservice.js` to point towards your deis api endpoint.
-2. `grunt build`
-3. Deploy to deis
+```bash
+deis create
+deis config:set DEIS_API=http://deis.local3.deisapp.com
+git push deis master
+```
+
+## Development
+
+```bash
+npm install
+npm start
+```
 
