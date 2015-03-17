@@ -68,7 +68,8 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        // Change to 'localhost' to disable access from outside.
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
@@ -351,6 +352,18 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    ngconstant: {
+      options: {
+        name: 'config',
+        dest: '.tmp/scripts/config.js',
+        constants: {
+          ENV: {
+            DEIS_API: process.env.DEIS_API
+          }
+        }
+      },
+      production: {}
     }
   });
 
@@ -362,6 +375,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'ngconstant:production',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -385,6 +399,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'ngconstant:production',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

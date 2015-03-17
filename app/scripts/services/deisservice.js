@@ -8,9 +8,9 @@
  * Service in the deisApp.
  */
 angular.module('deisApp')
-  .service('Deisservice', ['$http', 'AUTH_EVENTS', '$rootScope', 'Session', function ($http, AUTH_EVENTS, $rootScope, Session) {
+  .service('Deisservice', ['$http', 'AUTH_EVENTS', '$rootScope', 'Session', 'ENV', function ($http, AUTH_EVENTS, $rootScope, Session, ENV) {
 
-    var controller = "http://deis.local3.deisapp.com";
+    var controller = ENV.DEIS_API || "http://deis.local3.deisapp.com";
 
     this.login = function (username, password) {
 

@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'luegg.directives',
-    'ui.bootstrap-slider'
+    'ui.bootstrap-slider',
+    'config'
   ])
   .config(function ($routeProvider, $httpProvider, $locationProvider) {
 
