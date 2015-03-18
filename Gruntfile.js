@@ -304,7 +304,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt}',
+            '*.{ico,png,txt,js}',
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
@@ -353,18 +353,6 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-    ngconstant: {
-      options: {
-        name: 'config',
-        dest: '.tmp/scripts/config.js',
-        constants: {
-          ENV: {
-            DEIS_API: process.env.DEIS_API
-          }
-        }
-      },
-      production: {}
-    }
   });
 
 
@@ -375,7 +363,6 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'ngconstant:production',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -399,7 +386,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'ngconstant:production',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
