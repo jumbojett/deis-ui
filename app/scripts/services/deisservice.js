@@ -1,5 +1,7 @@
 'use strict';
 
+require('util');
+
 /**
  * @ngdoc service
  * @name deisApp.Deisservice
@@ -11,11 +13,12 @@ angular.module('deisApp')
   .service('Deisservice', ['$http', 'AUTH_EVENTS', '$rootScope', 'Session', 'ENV', function ($http, AUTH_EVENTS, $rootScope, Session, ENV) {
 
     var controller = ENV.DEIS_API || "http://deis.local3.deisapp.com";
+    var api_version = ENV.DEIS_API_VERSION || "v2"
 
     this.login = function (username, password) {
 
       $http({
-        url: controller + '/v1/auth/login/',
+        url: util.format('%s/%s/auth/login/', controller, api_version),
         method: "POST",
         data: $.param({'username': username, 'password': password}, true),
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -42,23 +45,23 @@ angular.module('deisApp')
      * @returns {HttpPromise}
      */
     this.apps = function () {
-      return $http.get(controller + '/v1/apps');
+      return $http.get(util.format('%s/%s/apps', controller, api_version));
     };
 
     this.appInfo = function (app) {
-      return $http.get(controller + '/v1/apps/' + app);
+      return $http.get(util.format('%s/%s/apps/%s', controller, api_version, app));
     };
 
     this.appLogs = function (app) {
-      return $http.get(controller + '/v1/apps/' + app + '/logs');
+      return $http.get(util.format('%s/%s/apps/%s/logs', controller, api_version, app));
     };
 
     this.getAppConfig = function (app) {
-      return $http.get(controller + '/v1/apps/' + app + '/config');
+      return $http.get(util.format('%s/%s/apps/%s/config', controller, api_version, app));
     };
 
     this.getAppPerms = function (app) {
-      return $http.get(controller + '/v1/apps/' + app + '/perms');
+      return $http.get(util.format('%s/%s/apps/%s/perms', controller, api_version, app));
     };
 
   }]

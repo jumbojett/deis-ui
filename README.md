@@ -23,6 +23,12 @@ deis config:set DEIS_API=http://deis.local3.deisapp.com
 git push deis master
 ```
 
+If you're on Deis v1:
+
+```bash
+deis config:set DEIS_API_VERSION=v1
+```
+
 ## Development
 
 ```bash
